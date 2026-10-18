@@ -1,0 +1,13 @@
+# Local runtime configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Saved family game sessions; never publish campaign history
+/data/
+
+# Local dependencies and OS artifacts
+node_modules/
+.DS_Store

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#162a22">
+  <title>Hermes RPG — A Torre Esquecida</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon" aria-hidden="true">✦</span><div><div class="tiny">AVENTURAS EM FAMÍLIA</div><strong>Hermes RPG</strong></div></div>
+    <div class="topstatus"><span id="mode-chip" class="chip">Conectando</span><span id="busy-chip" class="chip subtle" hidden>Mestre pensando…</span></div>
+  </header>
+  <main id="main" class="layout" hidden>
+    <aside class="sidebar">
+      <section class="panel"><p class="eyebrow">SUA IDENTIDADE</p><label for="who">Estou jogando como</label><select id="who"><option value="joe">Joe</option><option value="benicio">Benício</option></select></section>
+      <section class="panel"><p class="eyebrow">PERSONAGENS</p><div id="characters"></div></section>
+      <section class="panel print-hide"><p class="eyebrow">CONTROLES</p><div class="flex"><button id="speak-toggle" class="secondary" type="button">🔈 Voz: desligada</button><button id="print" class="secondary" type="button">🖨 Imprimir</button></div><button id="reset" class="danger" type="button">Reiniciar campanha</button></section>
+    </aside>
+    <section class="storycol">
+      <div class="hero"><div class="hero-decoration">✦ &nbsp;✧ &nbsp;✦</div><p class="eyebrow">CAMPANHA COOPERATIVA</p><h1>O Mistério da<br><span>Torre Esquecida</span></h1><p>Dois aventureiros. Uma floresta misteriosa. Um mestre chamado Hermes.</p></div>
+      <section class="panel scene"><div class="scene-head"><p class="eyebrow">CENA ATUAL</p><span id="revision" class="tiny"></span></div><h2 id="scene-title">A Clareira das Três Trilhas</h2><p id="scene-objective" class="objective"></p><p id="narration" class="narration" aria-live="polite"></p><p class="eyebrow">O QUE VOCÊS PODEM FAZER</p><div id="choices" class="choices"></div></section>
+      <section class="panel action-panel print-hide"><h2>Sua próxima ação</h2><form id="action-form"><label for="action">O que seu personagem faz?</label><textarea id="action" rows="3" maxlength="240" placeholder="Ex.: Quero examinar a pedra brilhante de perto." required></textarea><div class="controls"><label>Teste de atributo<select id="stat"><option value="nenhum">Sem rolagem</option><option value="coragem">Coragem</option><option value="agilidade">Agilidade</option><option value="engenho">Engenho</option></select></label><label>Dificuldade<select id="dc"><option value="9">Fácil (9)</option><option value="11" selected>Normal (11)</option><option value="14">Difícil (14)</option></select></label></div><button id="send" class="primary" type="submit">Enviar ação ao Mestre →</button><p class="help" id="feedback" role="status"></p></form></section>
+      <section class="panel history"><div class="heading-row"><h2>Diário da aventura</h2><button id="refresh" type="button" class="secondary print-hide">↻ Atualizar</button></div><div id="events" class="events"></div></section>
+    </section>
+    <aside class="mapcol"><section class="panel"><p class="eyebrow">MAPA DA FLORESTA</p><h2>Trilhas e mistérios</h2><div id="map" class="map" role="grid" aria-label="Mapa, clique em uma casa vizinha para mover seu personagem"></div><p class="help">Selecione sua identidade e clique em uma casa vizinha, horizontal ou verticalmente, para mover. Pedras escuras bloqueiam o caminho.</p></section><section class="panel rules"><p class="eyebrow">COMO FUNCIONA</p><p>Descreva livremente sua ação. Para uma tentativa arriscada, escolha um atributo e uma dificuldade. O servidor rola o d20, registra o resultado e envia ao Hermes.</p><p>O Hermes narra a consequência, enquanto as regras e as fichas ficam protegidas no servidor.</p></section></aside>
+  </main>
+  <dialog id="login"><form method="dialog" id="login-form"><div class="login-icon">✦</div><h2>Bem-vindos à aventura!</h2><p>Digite o PIN da família configurado no servidor para entrar na campanha.</p><label for="pin">PIN de acesso</label><input type="password" id="pin" autocomplete="off" required minlength="6"><button type="submit" class="primary">Entrar na floresta →</button><p class="help" id="login-error" role="alert"></p></form></dialog>
+</body>
+</html>

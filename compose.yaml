@@ -1,0 +1,10 @@
+# Linux: host networking is intentional; Hermes remains bound to localhost:8650.
+# Only use HOST=0.0.0.0 on a trusted LAN, with a strong APP_PIN.
+services:
+  hermes-rpg:
+    build: .
+    network_mode: host
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
