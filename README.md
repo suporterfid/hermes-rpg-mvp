@@ -2,6 +2,20 @@
 
 **MVP funcional de RPG cooperativo familiar**, com Joe e Benício como jogadores e o Hermes Agent como mestre. Interface web para PC, tablet e celular. Um único mini PC Linux pode hospedar todos os componentes.
 
+## Capturas de tela
+
+As imagens abaixo mostram o MVP em modo de demonstração, com visualizações reais da interface.
+
+### Desktop
+
+![Hermes RPG — interface desktop](docs/screenshots/desktop.png)
+
+### Mobile
+
+<img src="docs/screenshots/mobile.png" alt="Hermes RPG — interface mobile" width="390">
+
+---
+
 ## O que já está implementado
 
 - 2 fichas de personagem (Joe e Benício): atributos, vida e inventário.
